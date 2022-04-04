@@ -1,0 +1,11 @@
+module ros2 {
+  module builtin_interfaces {
+    module msg {
+      @transfer_mode(SHMEM_REF)
+      struct Time {
+        int32 sec;
+        uint32 nanosec;
+      };
+    };
+  };
+};

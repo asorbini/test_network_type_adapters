@@ -1,0 +1,17 @@
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+
+module ros2 {
+  module std_msgs {
+    module msg {
+      const uint32 FRAME_ID_MAX_LENGTH = 32;
+      @transfer_mode(SHMEM_REF)
+      struct Header {
+        ros2::builtin_interfaces::msg::Time stamp;
+        char frame_id[FRAME_ID_MAX_LENGTH + 1];
+      };
+    };
+  };
+};

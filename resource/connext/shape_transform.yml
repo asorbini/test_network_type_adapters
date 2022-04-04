@@ -1,0 +1,11 @@
+---
+type_transformations:
+  string_to_shape:
+    library: test_network_type_adapters
+    create_fn: StringToShapeTransformationPlugin_create
+topic_mappings:
+  - app_topic: rt/chatter
+    net_topic: Triangle
+    net_type: ShapeType
+    type_transform: string_to_shape
+...

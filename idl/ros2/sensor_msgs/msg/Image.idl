@@ -1,0 +1,24 @@
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { 
+  module sensor_msgs {
+    module msg {
+      const uint32 IMAGE_MAX_SIZE = 2764800;
+      const uint32 ENCODING_MAX_LENGTH = 32;
+      @transfer_mode(SHMEM_REF)
+      struct Image {
+        ros2::std_msgs::msg::Header header;
+        uint32 height;
+        uint32 width;
+        char encoding[ENCODING_MAX_LENGTH + 1];
+        uint8 is_bigendian;
+        uint32 step;
+        uint32 data_len;
+        uint8 data[IMAGE_MAX_SIZE];
+      };
+    };
+  };
+};
