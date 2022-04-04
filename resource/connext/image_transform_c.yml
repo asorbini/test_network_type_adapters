@@ -1,0 +1,9 @@
+---
+type_transformations:
+  image_zc:
+    library: test_network_type_adapters
+    create_fn: ImageCTransformationPlugin_create
+topic_mappings:
+  - app_type: sensor_msgs::msg::dds_::Image_
+    type_transform: image_zc
+...
