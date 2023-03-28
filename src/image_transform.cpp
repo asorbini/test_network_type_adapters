@@ -19,8 +19,6 @@ extern "C" {
   #include "ros2/sensor_msgs/msg/ImageSupport.h"
 }
 
-RMW_CONNEXTDDS_ZERO_COPY_C_TYPE_SUPPORT_ADAPTER(ros2_sensor_msgs_msg_Image);
-
 template<>
 struct rmw_connextdds::TypeTransformation<sensor_msgs::msg::Image, ros2_sensor_msgs_msg_Image>
 {
@@ -84,6 +82,9 @@ struct rmw_connextdds::TypeTransformation<sensor_msgs::msg::Image, ros2_sensor_m
     memcpy(&app_data.data[0], &net_data.data, net_data.data_len);
   }
 };
+
+
+RMW_CONNEXTDDS_ZERO_COPY_C_TYPE_SUPPORT_ADAPTER(ros2_sensor_msgs_msg_Image);
 
 rmw_connextdds::AnyTypeTransformationPlugin*
 ImageTransformationPlugin_create(

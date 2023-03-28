@@ -1,5 +1,6 @@
 ---
 type_transformations:
+  my_plugin: my_plugin_create
   string_to_shape:
     library: test_network_type_adapters
     create_fn: StringToShapeTransformationPlugin_create
